@@ -14,4 +14,10 @@ sample text
 sample text
 ```
 
-
+## Run webServer.js
+### curlコマンドとwebServer.jsの起動
+curlコマンドでhttpレスポンスが返ってくるか確認
+```
+node js/webServer.js
+curl http://localhost:8080
+```
