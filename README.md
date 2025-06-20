@@ -19,5 +19,5 @@ sample text
 curlコマンドでhttpレスポンスが返ってくるか確認
 ```
 node js/webServer.js
-curl http://localhost:8080
+curl http://localhost:3000
 ```
