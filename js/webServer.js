@@ -16,6 +16,13 @@ net
       const requestLine = httpRequest.split('\r\n')[0];
       const path = requestLine.split(' ')[1];
       const requestFile = path.endsWith('/') ? path + 'app/' +`index.html` : path;
+      if (!fs.existsSync(`.${requestFile}`)) {
+        const httpResponse = `HTTP/1.1 404 Not Found content-length: 0
+
+                              `;
+        socket.write(httpResponse);
+        return;
+      }
       const fileContent = fs.readFileSync(`.${requestFile}`);
       const httpResponse = `HTTP/1.1 200 OK content-length: ${fileContent.length}
 
